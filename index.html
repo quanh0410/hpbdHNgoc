@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem Video</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(9055759.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+        }
+        .container {
+            color:#ae1341;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 20px rgb(188, 0, 0);
+        }
+        input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #df5d84;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #9e3253;
+        }
+        video {
+            margin-top: 20px;
+            display: none; /* Ẩn video ban đầu */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="passwordContainer">
+        <h2>Nhập Mật Khẩu Để Xem</h2>
+        <input type="password" id="password" placeholder="Mật khẩu" />
+        <button onclick="checkPassword()">Xem</button>
+    </div>
+    <video id="video" width="640" height="360" controls>
+        <source src="lv_0_20241030003936 (1).mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video.
+    </video>
+</div>
+
+<script>
+    const correctPassword = "04112024"; // Thay đổi mật khẩu tại đây
+
+    function checkPassword() {
+        const inputPassword = document.getElementById("password").value;
+        const video = document.getElementById("video");
+
+        if (inputPassword === correctPassword) {
+            video.style.display = "block"; // Hiện video
+            video.play(); // Phát video
+            passwordContainer.style.display = "none"; // Ẩn phần nhập mật khẩu
+        } else {
+            alert("Sai rồi !!! Mật khẩu là ngày nhận món quà này");
+        }
+    }
+</script>
+
+</body>
+</html>
